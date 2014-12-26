@@ -4,7 +4,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Project Name</title>
+  <title>Input</title>
   
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,43 @@
 </head>
 <body>
 
+<div class="container formCont">
+  <div class="col-md-12 formWrap">
+    <form class="form-horizontal">
+      <fieldset>
 
+      <!-- Form Name -->
+      <legend>add a message..</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Name</label>  
+        <div class="col-md-4">
+        <input id="textinput" name="textinput" type="text" placeholder="enter name" class="form-control input-md" required="">
+          
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="message">Message</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="message" name="message">enter message</textarea>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="send"></label>
+        <div class="col-md-4">
+          <button id="send" name="send" class="btn btn-primary">send</button>
+        </div>
+      </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
 
 
 
