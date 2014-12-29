@@ -4,7 +4,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Input</title>
+  <title>Output</title>
   
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,45 +30,25 @@
   <meta property="og:description" content="Project Discription"/> 
 </head>
 <body>
+<?php 
+include('db.php');
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT `name`, `text` from `messages` order by `id` desc";
+$result = mysqli_query($conn, $sql);
 
-<div class="container formCont">
-  <div class="col-md-12 formWrap">
-    <form class="form-horizontal">
-      <fieldset>
+while($row = mysqli_fetch_object($result))
+{
+  //print_r($row);
+  print("<strong>" . $row->name . ":</strong><br /><p>" . $row->text . "</p>");
+}
 
-      <!-- Form Name -->
-      <!-- <legend>add a message..</legend> -->
-
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">Name</label>
-        <div class="col-md-4">
-        <input id="textinput" name="textinput" type="text" placeholder="enter name" class="form-control input-md" required="">
-          
-        </div>
-      </div>
-
-      <!-- Textarea -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="message">Message</label>
-        <div class="col-md-4">                     
-          <textarea class="form-control" id="message" name="message">enter message</textarea>
-        </div>
-      </div>
-
-      <!-- Button -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="send"></label>
-        <div class="col-md-4">
-          <button id="send" name="send" class="btn btn-primary">send</button>
-        </div>
-      </div>
-
-      </fieldset>
-    </form>
-  </div>
-</div>
-
+mysqli_close($conn);
+?>
 
 
 </body>
