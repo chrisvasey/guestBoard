@@ -30,7 +30,7 @@
   <meta property="og:description" content="Project Discription"/> 
 
 </head>
-<body>
+<body class="input">
 <?php
 include("db.php");
 // Create connection
@@ -68,33 +68,26 @@ mysqli_close($conn);
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="name">Name</label>
-        <div class="col-md-4">
+        <label class="control-label" for="name">NAME</label>
         <input id="name" name="name" type="text" placeholder="enter name" class="form-control input-md" required="">
-        </div>
       </div>
 
       <!-- Textarea -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="text">Message</label>
-        <div class="col-md-4">                     
-          <textarea class="form-control" id="text" name="text">enter message</textarea>
-        </div>
+        <label class="control-label" for="text">MESSAGE</label>                     
+        <textarea onfocus="if (this.value == 'enter message') {this.value=''}" class="form-control" id="text" name="text">enter message</textarea>
       </div>
 
       <!-- Button -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="send"></label>
-        <div class="col-md-4">
-          <button id="send" name="send" class="btn btn-primary">send</button>
-        </div>
+        <label class="control-label" for="send"></label>
+        <button id="send" name="send" class="btn btn-primary">send</button>
       </div>
 
       </fieldset>
     </form>
   </div>
 </div>
-
 
 
 </body>
