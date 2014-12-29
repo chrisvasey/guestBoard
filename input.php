@@ -81,7 +81,7 @@ mysqli_close($conn);
       <!-- Button -->
       <div class="form-group">
         <label class="control-label" for="send"></label>
-        <button id="send" name="send" class="btn btn-primary">send</button>
+        <button id="send" name="send" class="btn btn-primary">Send</button>
       </div>
 
       </fieldset>
