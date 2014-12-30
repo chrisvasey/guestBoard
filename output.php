@@ -29,7 +29,10 @@
   <meta property="og:title" content="Project Name" />
   <meta property="og:description" content="Project Discription"/> 
 </head>
-<body>
+<body class="outputBody">
+
+<div class="ticker">
+  <div class="innerWrap">
 <?php 
 include('db.php');
 // Create connection
@@ -44,12 +47,33 @@ $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_object($result))
 {
   //print_r($row);
-  print("<strong>" . $row->name . ":</strong><br /><p>" . $row->text . "</p>");
+  print("<div class='list'><strong>" . $row->name . ":</strong><p>" . $row->text . "</p></div>");
 }
 
 mysqli_close($conn);
 ?>
+  </div>
+</div>
 
+<script src="js/jquery.easy-ticker.min.js"></script> 
+  <script>
+  $('.ticker').easyTicker({
+    direction: 'up',
+    easing: 'swing',
+    speed: 'slow',
+    interval: 10000,
+    height: 'auto',
+    visible: 0,
+    mousePause: 0,
+    controls: {
+      up: '',
+      down: '',
+      toggle: '',
+      playText: 'Play',
+      stopText: 'Stop'
+    }
+  });
+</script>
 
 </body>
 <!-- Bootstrap core JavaScript
