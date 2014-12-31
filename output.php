@@ -31,7 +31,7 @@
 </head>
 <body class="outputBody">
 
-<div class="ticker">
+<div class="tickerMob">
   <div class="innerWrap">
 <?php 
 include('db.php');
