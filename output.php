@@ -61,7 +61,7 @@ mysqli_close($conn);
     direction: 'up',
     easing: 'swing',
     speed: 'slow',
-    interval: 10000,
+    interval: 1000,
     height: 'auto',
     visible: 0,
     mousePause: 0,

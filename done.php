@@ -63,16 +63,6 @@
   <div class="col-md-12 formWrap">
     <form class="form-horizontal" method="post" action="input.php">
       <fieldset>
-      <!-- Text input-->
-      <div class="form-group">
-        <input id="name" name="name" type="text" placeholder="NAME" class="form-control input-md" required="">
-      </div>
-
-      <!-- Textarea -->
-      <div class="form-group">                     
-        <textarea rows="1" placeholder="MESSAGE" onfocus="if (this.value == 'MESSAGE') {this.value=''}" class="form-control" id="text" name="text">MESSAGE</textarea>
-      </div>
-
       <!-- Button -->
       <div class="form-group">
         <label class="control-label" for="send"></label>
