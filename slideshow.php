@@ -34,56 +34,6 @@
 </head>
 <body class="feedBody">
 <div class="container contentFeed"></div>
-<div class="col-md-4">
-<div class="ticker feedTick">
-  <div class="innerWrap">
-<?php 
-include('db.php');
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "SELECT `name`, `text` from `messages` order by `id` desc";
-$result = mysqli_query($conn, $sql);
-
-while($row = mysqli_fetch_object($result))
-{
-  //print_r($row);
-  print("<div class='list'><strong id='nameCol'>" . $row->name . ":</strong><p>" . $row->text . "</p></div>");
-}
-
-mysqli_close($conn);
-?>
-  </div>
-</div>
-<script src="js/jquery.easy-ticker.min.js"></script> 
-  <script>
-  $('.ticker').easyTicker({
-    direction: 'up',
-    easing: 'swing',
-    speed: 'slow',
-    interval: 5000,
-    height: 'auto',
-    visible: 0,
-    mousePause: 0,
-    controls: {
-      up: '',
-      down: '',
-      toggle: '',
-      playText: 'Play',
-      stopText: 'Stop'
-    }
-  });
-</script>
-
-</div>
-
-
-
-
-<div class="col-md-8">
 <!-- Photos -->
 <div class="fotorama"
   data-width="100%"
@@ -175,7 +125,54 @@ mysqli_close($conn);
   <img src="images/99.jpg" alt="">
   <img src="images/100.jpg" alt="">
 </div>
+
+
+
+<!-- <div class="ticker">
+  <div class="innerWrap">
+<?php 
+include('db.php');
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT `name`, `text` from `messages` order by `id` desc";
+$result = mysqli_query($conn, $sql);
+
+while($row = mysqli_fetch_object($result))
+{
+  //print_r($row);
+  print("<div class='list'><strong>" . $row->name . ":</strong><p>" . $row->text . "</p></div>");
+}
+
+mysqli_close($conn);
+?>
+  </div>
 </div>
+  <button class="outBack"  onclick="location.href='index.html'">
+    BACK
+  </button>
+<script src="js/jquery.easy-ticker.min.js"></script> 
+  <script>
+  $('.ticker').easyTicker({
+    direction: 'up',
+    easing: 'swing',
+    speed: 'slow',
+    interval: 1000,
+    height: 'auto',
+    visible: 0,
+    mousePause: 0,
+    controls: {
+      up: '',
+      down: '',
+      toggle: '',
+      playText: 'Play',
+      stopText: 'Stop'
+    }
+  });
+</script> -->
 
 </body>
 <!-- Bootstrap core JavaScript
