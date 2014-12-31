@@ -32,7 +32,10 @@
 </head>
 <body class="input">
 
-<?php
+<div class="container formCont">
+  <div class="container">
+    <button class="backBtn" onclick="location.href='index.html'">
+     <?php
   include("db.php");
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -51,7 +54,7 @@
       VALUES ('$name', '$text')";
 
       if (mysqli_query($conn, $sql)) {
-          echo "New record created successfully";
+          echo "MESSAGE ADDED <br> CLICK TO GO BACK";
       } else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
@@ -59,19 +62,8 @@
   }
   mysqli_close($conn);
 ?>
-<div class="container formCont">
-  <div class="col-md-12 formWrap">
-    <form class="form-horizontal" method="post" action="input.php">
-      <fieldset>
-      <!-- Button -->
-      <div class="form-group">
-        <label class="control-label" for="send"></label>
-        <button id="send" name="send" class="btn btn-primary">SEND</button>
-      </div>
-      </fieldset>
-    </form>
+</button>
   </div>
-</div>
 
 </body>
 <!-- Bootstrap core JavaScript

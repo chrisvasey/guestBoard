@@ -61,7 +61,7 @@
 ?>
 <div class="container formCont">
   <div class="col-md-12 formWrap">
-    <form class="form-horizontal" method="post" action="input.php">
+    <form class="form-horizontal" method="post" action="done.php">
       <fieldset>
       <!-- Text input-->
       <div class="form-group">
