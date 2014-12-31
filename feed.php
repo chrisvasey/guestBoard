@@ -32,7 +32,7 @@
   <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.js"></script> <!-- 16 KB -->
 </head>
-<body class="outputBody">
+<body class="feedBody">
 <div class="container contentFeed"></div>
 <!-- Photos -->
 <div class="fotorama"
